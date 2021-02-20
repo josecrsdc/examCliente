@@ -1,0 +1,30 @@
+<br>
+<h3>Listado de Tareas</h3>
+<div  style="width:75%">
+<table class="table table-bordered table-striped">
+<thead>
+<tr class="filters">
+<th>id</th>
+<th>nombre</th>
+<th>estado
+  <select (change)="onChange($event.target.value)">
+    <option *ngFor="let option of options">{{option}}</option>
+  </select>
+
+</th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor= "let tarea of tareas">
+    <td>{{tarea.id}}</td>  <!--id tarea -->
+    <td>{{tarea.nombre}}</td>  <!--nombre tarea -->
+    <td>{{tarea.estado}}</td>  <!--estado tarea -->
+    <td *ngIf="tarea.estado == 'Pendiente'; else elseBlock"><button (click)='navAbrir(tarea)' class="btn btn-danger">Finalizar</button></td>  <!--Boton finalizar Tarea -->
+	<ng-template #elseBlock></ng-template>
+</tr>
+</tbody>
+</table>
+
+<h4>Total Pendientes: {{totpendientes}}</h4>
+<h4>Total Realizadas: {{totRealizadas}}</h4>
+</div>

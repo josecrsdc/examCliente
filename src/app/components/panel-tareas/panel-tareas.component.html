@@ -1,0 +1,12 @@
+<br>
+<h3>Panel de Tareas</h3>
+<div class="row align-items-stretch justify-content-start card-deck">
+
+<app-tarea
+[tarea]= "tarea" *ngFor="let tarea of tareas"
+></app-tarea>
+</div>
+
+<div class="text-center">
+<button class="btn btn-primary text-center" [routerLink]="['/tareas']">Volver a Tareas</button> <!--Boton para volver a tareas -->
+</div>

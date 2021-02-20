@@ -1,0 +1,9 @@
+<br>
+<h3> Fin de la Tarea {{tarea.id}} </h3>                        <!-- Poner id de la tarea -->
+<div class="alert alert-dark" role="alert">
+    <br><p>{{tarea.nombre}}</p>                                          <!-- Poner nombre de la tarea -->
+     <div class="text-center">
+        <button class="btn btn-danger" (click)='finTarea()'>Finalizar</button> &nbsp;
+        <button class="btn btn-primary" [routerLink]="['/tareas']">Cancelar</button>
+    </div>
+</div>
